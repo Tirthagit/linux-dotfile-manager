@@ -1,0 +1,7 @@
+[Unit]
+Description=Sync dotfiles with git
+
+[Service]
+ExecStart="$HOME/dotfiles/scripts/sync.sh"
+StandardOutput=""
+StandardError=""
