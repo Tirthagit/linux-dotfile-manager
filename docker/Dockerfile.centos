@@ -1,0 +1,24 @@
+FROM centos:8
+
+# Install necessary packages
+RUN dnf -y update && \
+    dnf -y install git curl sudo zsh bash shadow-utils && \
+    dnf clean all
+
+# Add a non-root user for testing
+RUN useradd -ms /bin/bash devuser && \
+    echo "devuser ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+
+# Switch to non-root user
+USER devuser
+WORKDIR /home/devuser
+
+# Clone dotfiles repo
+RUN git clone https://github.com/Tirthagit/linux-dotfile-manager.git dotfiles
+
+# Set working directory inside the dotfiles repo
+WORKDIR /home/devuser/dotfiles
+
+# Run the install script
+RUN chmod +x install.sh && \
+    ./install.sh > install.log 2>&1 || true
