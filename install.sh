@@ -83,24 +83,25 @@ for FILE  in "${DOTFILES[@]}"; do
     # fi
     COMMON="$DOTFILES_DIR/$FILE"
     TARGET="$HOME/$FILE"
-
+    
     # Backup if the files exits and is not a symlink
     if [ -f $FILE ] && [ ! -L $TARGET ]; then
-        cp "$TARGET" "$TARGET.bak"  
+        cp "$TARGET" "$TARGET.bak"
         echo -e "${YELLOW}📦 Backed up existing $FILE to $FILE.bak${NC}"
     fi
-
-    # Default link 
+    
+    # Default link
     if [ -f $COMMON ]; then
-        ln -sf "$COMMON" "$TARGET" 
+        ln -sf "$COMMON" "$TARGET"
         echo -e "${BLUE}🔗 Linked $FILE -> common version${NC}"
     fi
-
+    
     # Override if OS specific exists
     if [ -f $CONFIG_DIR/$FILE ]; then
         ln -sf "$CONFIG_DIR/$FILE" "$TARGET"
-        echo -e "${BLUE}⚠️ Overriden $FILE -> $DISTRO version${NC}" 
-
+        echo -e "${BLUE}⚠️ Overriden $FILE -> $DISTRO version${NC}"
+    fi
+    
 done
 
 # Optional KDE settings
