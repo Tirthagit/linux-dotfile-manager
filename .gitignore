@@ -1,1 +1,7 @@
 Roadmap.md
+
+
+scripts/dotfiles.sh
+scripts/install-packages.sh
+scripts/setup.sh
+scripts/logging.sh
