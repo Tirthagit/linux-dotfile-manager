@@ -1,3 +1,3 @@
 alias gs='git status'
 alias ll='ls -lah'
-alias dockclean='docker 
+alias dockclean='docker system prune -af'
