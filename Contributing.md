@@ -62,14 +62,25 @@ Whether you're a beginner or an expert, you can contribute in many ways:
 
 ---
 
-## 📋 Contributing Guidelines
+## 📋 Contributor Guidelines
 
-1. **Fork the repo**
-2. **Create a new branch**:  
+1. **Fork the repository and create a new branch:**
    `git checkout -b fix-issue-#23`
-3. **Write your code** — try to keep it clean and documented.
-4. **Submit a Pull Request** — describe what you changed and why.
-5. **Be kind and respectful** — we are all learning here!
+2. **Write your code** - Try to keep commits small and descriptive.
+3. **Submit a Pull Request** - Open a Pull Request with a clear explanation of your changes.
+4. If you’re not sure something is correct, **open a Draft PR or Issue** — I’d love to collaborate!
+5. **Be kind and respectful** - Be kind and supportive — this is a learning space and we are all learning here!
+
+---
+
+## ⚠️ A Note on Honesty
+
+Yes, I am being transparent about where I’m struggling — and that’s okay.
+
+This isn’t about pretending to be an expert.  
+This is about building, failing, improving — and maybe inspiring others to do the same.
+
+If you want to help improve this project, your kindness and knowledge are valued more than perfection.
 
 ---
 
