@@ -1,5 +1,8 @@
 Roadmap.md
 
+.gitconfig
+.gitconfig.template
+
 
 scripts/dotfiles.sh
 scripts/install-packages.sh
