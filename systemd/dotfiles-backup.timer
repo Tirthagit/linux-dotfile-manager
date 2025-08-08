@@ -1,6 +1,11 @@
+# systemd/dotfiles-backup.timer
+
+[Unit]
+Description=Run dotfiles backup daily
+
 [Timer]
-OnBootSec=10min
-OnUnitActiveSec=24h
+OnCalender=daily
+Persistent=true
 
 [Install]
 WantedBy=timers.target
