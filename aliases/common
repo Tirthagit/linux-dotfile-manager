@@ -1,3 +1,78 @@
+#!/bin/bash 
+
+# Git
 alias gs='git status'
+alias gl='git log --oneline --graph --decorate'
+alias gp='git push'
+alias gpl='git pull'
+
+# Filesystem
 alias ll='ls -lah'
+alias la='ls -A'
+alias l='ls -CF'
+
+# Docker helpers
 alias dockclean='docker system prune -af'
+alias dockps='docker ps -a'
+alias dockexec='docker exec -it'
+alias dcompose='docker compose'
+alias dps='docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Status}}\t{{.Ports}}"'
+alias dimg='docker images'
+alias drm='docker rm -f'
+alias drmi='docker rmi -f'
+
+
+# Dotfiles project commands
+alias df-root='cd "$HOME/dotfiles"'
+alias df-pull='git -C "$HOME/dotfiles" pull'
+alias df-install='bash "$HOME/dotfiles/install.sh"'
+alias df-uninstall='bash "$HOME/dotfiles/uninstall.sh"'
+
+alias df-install="bash ~/dotfiles/scripts/systemd-install.sh"
+alias df-uninstall="bash ~/dotfiles/scripts/systemd-uninstall.sh"
+alias df-backup="bash ~/dotfiles/scripts/systemd-install.sh --backup"
+alias df-sync="bash ~/dotfiles/scripts/systemd-install.sh --sync"
+
+alias df-logs-backup="journalctl --user -u dotfiles-backup.service"
+alias df-logs-sync="journalctl --user -u dotfiles-sync.service"
+
+alias df-start-backup="systemctl --user start dotfiles-backup.timer"
+alias df-stop-backup="systemctl --user stop dotfiles-backup.timer"
+
+alias df-start-sync="systemctl --user start dotfiles-sync.timer"
+alias df-stop-sync="systemctl --user stop dotfiles-sync.timer"
+
+# Generic shortcut to systemd control script
+alias dfctl='bash "$HOME/dotfiles/scripts/systemd-control.sh"'
+
+# Common quick commands
+alias df-status='bash "$HOME/dotfiles/scripts/systemd-manage.sh" --status all'
+alias df-start='bash "$HOME/dotfiles/scripts/systemd-manage.sh" --start all'
+alias df-stop='bash "$HOME/dotfiles/scripts/systemd-manage.sh" --stop all'
+alias df-restart='bash "$HOME/dotfiles/scripts/systemd-manage.sh" --restart all'
+alias df-disable='bash "$HOME/dotfiles/scripts/systemd-manage.sh" --disable all'
+alias df-status-backup='bash "$HOME/dotfiles/scripts/systemd-manage.sh" --status backup'
+alias df-status-sync='bash "$HOME/dotfiles/scripts/systemd-manage.sh" --status sync'
+alias df-reload='dfctl daemon-reload'
+
+# Safety Aliases
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+alias grep='grep --color=auto'
+alias df='df -h'
+alias free='free -m'
+
+
+# Quickly search systemd logs for a specific service
+function jgrep() {
+    journalctl --user -u "$1" | grep --color=always "$2"
+}
+alias jg='jgrep'
+
+# Search for a file in current dir recursively
+function ffind() {
+    find . -type f -iname "*$1*"
+}
+alias ff='ffind'
