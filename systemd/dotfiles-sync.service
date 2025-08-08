@@ -1,7 +1,11 @@
+# systemd/dotfiles-sync.service
+
 [Unit]
-Description=Sync dotfiles with git
+Description=Sync dotfiles with git every 30 minutes
+Wants=dotfiles-sync.timer
 
 [Service]
-ExecStart="$HOME/dotfiles/scripts/sync.sh"
-StandardOutput=""
-StandardError=""
+Type=simple
+ExecStart=%h/dotfiles/scripts/sync.sh
+StandardOutput=journal
+StandardError=journal
