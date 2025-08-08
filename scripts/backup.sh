@@ -13,7 +13,7 @@
 timestamp=$(date +%Y-%m-%d_%H-%M-%S)
 
 # Directory where backups will be stored
-BACKUP_DIR = "$HOME/.local/share/dotfiles_backup"
+BACKUP_DIR="$HOME/.local/share/dotfiles-utility/dotfiles_backup"
 
 # Ensure backup directory exists
 mkdir -p "$BACKUP_DIR"
