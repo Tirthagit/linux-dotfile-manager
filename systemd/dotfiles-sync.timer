@@ -1,0 +1,11 @@
+# systemd/dotfiles-sync.timer
+
+[Unit]
+Description=Run dotfiles sync every 24 hours
+
+[Timer]
+OnCalender=*:0/30
+Persistent=true
+
+[Install]
+WantedBy=default.target
