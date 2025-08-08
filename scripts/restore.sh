@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BACKUP_DIR="$HOME/.local/share/dotfiles_backup"
+BACKUP_DIR="$HOME/.local/share/dotfiles-utility/dotfiles_backup"
 
 mkdir -p "$BACKUP_DIR"
 
