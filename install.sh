@@ -6,6 +6,13 @@ source scripts/cron.sh
 
 setup_cron_jobs
 
+# Load dotfiles aliases
+if [ -d "$HOME/dotfiles/aliases" ]; then
+    for file in "$HOME/dotfiles/aliases/*.sh"; do
+        [ -r "$file" ] && . "$file"
+    done
+fi
+
 echo "🔍 Detecting Linux Distribution..."
 
 # Enable Colors
