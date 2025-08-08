@@ -55,6 +55,8 @@ alias df-status-backup='bash "$HOME/dotfiles/scripts/systemd-manage.sh" --status
 alias df-status-sync='bash "$HOME/dotfiles/scripts/systemd-manage.sh" --status sync'
 alias df-reload='dfctl daemon-reload'
 
+alias df-test='bash "$HOME/dotfiles/tests/run-tests.sh"'
+
 # Safety Aliases
 alias rm='rm -i'
 alias cp='cp -i'
