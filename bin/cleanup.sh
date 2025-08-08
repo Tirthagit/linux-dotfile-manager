@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-BACKUP_DIR="$HOME/.local/share/dotfiles_backup"
+BACKUP_DIR="$HOME/.local/share/dotfiles-utility/dotfiles_backup"
 
 set -eou pipefail
 
