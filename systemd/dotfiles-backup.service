@@ -1,0 +1,11 @@
+# systemd/dotfiles-backup.service
+
+[Unit]
+Description=Backup dotfiles to a safe directory
+Wants=dotfiles-backup.timer
+
+[Service]
+Type=simple
+ExecStart=%h/dotfiles/scripts/backup.sh
+StandardOutput=journal
+StandardError=journal
