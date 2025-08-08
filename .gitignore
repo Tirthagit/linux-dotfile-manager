@@ -3,6 +3,14 @@ Roadmap.md
 .gitconfig
 .gitconfig.template
 
+*.swp
+*.bak
+.cache/
+*.log
+secrets/
+.env
+test-logs/
+cronjobs/
 
 scripts/dotfiles.sh
 scripts/install-packages.sh
