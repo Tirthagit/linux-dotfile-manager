@@ -11,6 +11,7 @@ secrets/
 .env
 test-logs/
 cronjobs/
+docs/*
 
 scripts/dotfiles.sh
 scripts/install-packages.sh
