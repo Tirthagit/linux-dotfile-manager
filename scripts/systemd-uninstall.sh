@@ -36,7 +36,7 @@ show_help(){
 # Uninstall selected services
 remove_unit(){
     
-    local $name="$1"
+    local name="$1"
     echo "${CYAN}🔧 Removing $name.service and $name.timer$...{NC}"
     
     systemctl --user disable --now  "$name.service" 2>/dev/null || true
@@ -82,7 +82,7 @@ else
                 SERVICES+=(dotfiles-sync)
             ;;
             --all)
-                SERVICES+=(${SERVICES[@]})
+                SERVICES+=($"{SERVICES[@]}")
             ;;
             -h|--help)
                 show_help; exit 0
@@ -97,7 +97,7 @@ fi
 
 
 for service in "${SERVICES[@]}"; do
-    remove_unit $service
+    remove_unit "$service"
 done
 
 # Reload system user daemon
