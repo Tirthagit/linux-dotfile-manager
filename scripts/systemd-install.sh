@@ -49,7 +49,7 @@ install_init(){
     
     # Enable and start the timer
     systemctl --user daemon-reload
-    systemctl --reload enable --now $name.timer
+    systemctl --reload enable --now "$name.timer"
     
     echo -e "${GREEN}✅ $name.timer started and enabled!${NC}"
     
@@ -70,7 +70,7 @@ if [[ $# -eq 0 ]]; then
         *) echo "Cancelled." exit 0 ;;
     esac
 else
-    for $arg in "$@"; do
+    for arg in "$@"; do
         case $arg in
             --backup)
                 SERVICES+=(dotfiles-backup)
@@ -89,7 +89,7 @@ else
 fi
 
 for service in "${SERVICES[@]}"; do
-    install_init $service
+    install_init "$service"
 done
 
 echo "${GREEN}🎉 All selected systemd services and timer installed successfully!${NC}"
