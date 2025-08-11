@@ -9,21 +9,6 @@ blue="\e[94m"
 bold="\e[1m"
 reset="\e[0m"
 
-# echo -e "${cyan}${bold}
-#   ____         _    __ _ _
-#   |  _ \  ___ | |_ / _(_) | ___  ___
-#   | | | |/ _ \| __| |_| | |/ _ \/ __|
-#   | |_| | (_) | |_|  _| | |  __/\__ \
-#   |____/ \___/ \__|_| |_|_|\___||___/
-
-
-# ${reset}${yellow}DotWizard – Distro-Aware Dotfiles Manager${reset}
-# ${green}Your Linux. Your Configs. Synchronized.${reset}"
-
-
-
-
-
 # ──[ ASCII Art Banner ]──────────────────────────────────────────
 echo -e "${magenta}${bold}"
 cat <<'EOF'
