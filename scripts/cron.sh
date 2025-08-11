@@ -5,9 +5,8 @@
 # Add cron job installer logic
 add_cron_job(){
 
-    local $schedule="$1"
-    local $command="$2"
-
+    local schedule="$1"
+    local command="$2"
 
     # Check if the cron job already exists 
     if [[ $? -eq 0 ]]; then
