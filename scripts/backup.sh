@@ -41,7 +41,7 @@ for FILE in "${DOTFILES_TO_BACKUP[@]}"; do
 done
 
 # Define the final compress archive path
-$BACKUP_FILE="$BACKUP_DIR/dotfiles_backup_$timestamp.tar.gz"
+BACKUP_FILE="$BACKUP_DIR/dotfiles_backup_$timestamp.tar.gz"
 
 echo "📦 Creating backup at: $BACKUP_FILE"
 
